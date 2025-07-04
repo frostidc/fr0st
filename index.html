@@ -49,9 +49,10 @@
       z-index: 2;
     }
 
+    /* Konumlar */
     .mandalinwy-text { bottom: 50px; left: 50%; transform: translateX(-50%); }
     .wiqhan-text { left: 50px; top: 50%; transform: translateY(-50%); }
-    .ermes-text { top: 30px; left: 50%; transform: translateX(-50%); }
+    .ermes-text { top: 30px; left: 50px; }
     .burakwy-text { right: 50px; top: 50%; transform: translateY(-50%); }
 
     .centered {
@@ -148,7 +149,7 @@
 
     function checkAllKeys() {
       if (keysPressed.e && keysPressed.w && keysPressed.s && keysPressed.b) {
-        // Sadece Mandalinwy, Ermes ve Burakwy ortalansın
+        // Ortalanacaklar: e, s, b
         ['mandalinwy-text', 'ermes-text', 'burakwy-text'].forEach(className => {
           const el = document.querySelector(`.${className}`);
           if (el) el.classList.add('centered');
