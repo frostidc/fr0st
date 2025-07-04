@@ -18,6 +18,7 @@
       justify-content: center;
       overflow: hidden;
       font-family: 'Segoe UI', sans-serif;
+      position: relative;
     }
 
     .glow-text {
@@ -30,6 +31,18 @@
         0 0 80px #00faff;
       animation: glow 2s infinite alternate, fadeIn 2s ease-out;
       letter-spacing: 4px;
+    }
+
+    .mandalinwy-text {
+      position: absolute;
+      bottom: 50px;
+      font-size: 3rem;
+      color: #ff9900;
+      text-shadow:
+        0 0 10px #ff9900,
+        0 0 20px #ff9900,
+        0 0 40px #ff9900;
+      animation: fadeIn 1s ease-out;
     }
 
     @keyframes glow {
@@ -63,5 +76,18 @@
 </head>
 <body>
   <div class="glow-text">Frost</div>
+
+  <script>
+    document.addEventListener('keydown', function(e) {
+      if (e.key.toLowerCase() === 'e') {
+        if (!document.querySelector('.mandalinwy-text')) {
+          const mandalinText = document.createElement('div');
+          mandalinText.className = 'mandalinwy-text';
+          mandalinText.textContent = 'Mandalinwy';
+          document.body.appendChild(mandalinText);
+        }
+      }
+    });
+  </script>
 </body>
 </html>
