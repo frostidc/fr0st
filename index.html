@@ -148,12 +148,13 @@
 
     function checkAllKeys() {
       if (keysPressed.e && keysPressed.w && keysPressed.s && keysPressed.b) {
-        const texts = document.querySelectorAll('.mandalinwy-text, .wiqhan-text, .ermes-text, .burakwy-text');
-        texts.forEach(el => {
-          el.classList.add('centered');
+        // Sadece Mandalinwy, Ermes ve Burakwy ortalansın
+        ['mandalinwy-text', 'ermes-text', 'burakwy-text'].forEach(className => {
+          const el = document.querySelector(`.${className}`);
+          if (el) el.classList.add('centered');
         });
 
-        // Gojo'nun mor topunu oluştur
+        // Mor top efekti
         const orb = document.createElement('div');
         orb.className = 'purple-orb';
         document.body.appendChild(orb);
